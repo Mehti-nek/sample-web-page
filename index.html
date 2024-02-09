@@ -3,19 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Control Center</title>
+    <title>Modern Dark UI</title>
     <link rel="stylesheet" href="index_style.css">
 </head>
 <body>
     <nav>
-        <h1>Control Center</h1>
+        <div class="container">
+            <h1>Control Panel</h1>
+            <ul class="nav-links">
+                <li class="dropdown">
+                    <a href="#">Add Device</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="add_light.html">Light</a></li>
+                        <li><a href="add_hvac.html">HVAC</a></li>
+                        <li><a href="add_floorheat.html">Floorheat</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">About</a></li>
+            </ul>
+        </div>
     </nav>
     <div class="container">
-        <div class="box">
-            <div class="item-box"><a href="light.html">Light</a></div>
-            <div class="item-box"><a href="hvac.html">HVAC</a></div>
-            <div class="item-box"><a href="floorheat.html">Floorheat</a></div>
-        </div>
+        <ul>
+            <li><a href="light.html">
+                <div class="box">
+                    Light
+                </div>
+            </a></li>
+            <li><a href="hvac.html">
+                <div class="box">
+                    HVAC
+                </div>
+            </a></li>
+            <li><a href="floorheat.html">
+                <div class="box">
+                    Floorheat
+                </div>
+            </a></li>
+        </ul>
     </div>
     <script src="index_script.js"></script>
 </body>
