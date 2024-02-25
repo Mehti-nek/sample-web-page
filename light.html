@@ -3,10 +3,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Light</title>
+    <title>Smart Home Control Panel</title>
+    <link rel="stylesheet" href="light.css">
+    <style>
+        .device-section {
+            margin-bottom: 20px;
+        }
+        .devices {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around; /* Equal space around items */
+            padding: 0 20px; /* Equal space on sides */
+        }
+        .device {
+            background-color: #ffffff;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            width: 200px;
+            height: 200px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        @media only screen and (max-width: 500px) {
+            .devices {
+                padding: 0; /* Reset padding for smaller screens */
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1>Light Control</h1>
-    <p>This is the Light control page.</p>
+    <div class="container">
+        <header>
+            <h1>Smart Home Control Panel</h1>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="#">Dashboard</a></li>
+                <li><a href="#">Devices</a></li>
+                <li><a href="#">Settings</a></li>
+            </ul>
+        </nav>
+        <main>
+            <h2>Main Content Area</h2>
+            <div class="device-section" id="living-room-section">
+                <h3>Living Room</h3>
+                <div class="devices">
+                    <!-- Devices in the living room will be added here -->
+                </div>
+            </div>
+            <div class="device-section" id="kitchen-section">
+                <h3>Kitchen</h3>
+                <div class="devices">
+                    <!-- Devices in the kitchen will be added here -->
+                </div>
+            </div>
+            <!-- Add more device sections as needed -->
+        </main>
+        <footer>
+            <p>&copy; 2024 Smart Home Control Panel. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Sample device data organized by section
+        var devicesBySection = {
+            'living-room-section': [
+                { name: 'Living Room Lights', type: 'switch' },
+                { name: 'Living Room Thermostat', type: 'slider', min: 60, max: 80, value: 70 },
+                { name: 'Living Room Lights', type: 'switch' },
+                { name: 'Living Room Thermostat', type: 'slider', min: 60, max: 80, value: 70 },
+                { name: 'Living Room Lights', type: 'switch' },
+                { name: 'Living Room Thermostat', type: 'slider', min: 60, max: 80, value: 70 },
+                { name: 'Living Room Lights', type: 'switch' },
+                { name: 'Living Room Thermostat', type: 'slider', min: 60, max: 80, value: 70 },
+                // Add more devices in the living room here
+            ],
+            'kitchen-section': [
+                { name: 'Kitchen Lights', type: 'switch' },
+                { name: 'Kitchen Thermostat', type: 'slider', min: 60, max: 80, value: 70 }
+                // Add more devices in the kitchen here
+            ]
+            // Add more sections and devices as needed
+        };
+
+        // Function to generate HTML for each device
+        function generateDeviceHTML(device) {
+            var html = '<div class="device">';
+            html += '<h4>' + device.name + '</h4>';
+            if (device.type === 'switch') {
+                html += '<button class="toggle">Toggle</button>';
+            } else if (device.type === 'slider') {
+                html += '<input type="range" min="' + device.min + '" max="' + device.max + '" value="' + device.value + '" class="slider">';
+                html += '<p>Current Temperature: <span class="temperature">' + device.value + '</span>°F</p>';
+            }
+            html += '</div>';
+            return html;
+        }
+
+        // Generate HTML for devices in each section and append to the DOM
+        Object.keys(devicesBySection).forEach(function(sectionId) {
+            var devicesContainer = document.getElementById(sectionId).getElementsByClassName('devices')[0];
+            devicesBySection[sectionId].forEach(function(device) {
+                devicesContainer.innerHTML += generateDeviceHTML(device);
+            });
+        });
+    </script>
 </body>
 </html>
