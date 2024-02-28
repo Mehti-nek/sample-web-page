@@ -3,10 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HVAC</title>
+    <link rel="stylesheet" href="hvac.css">
+    <title>IoT Device Control</title>
 </head>
 <body>
-    <h1>HVAC Control</h1>
-    <p>This is the HVAC control page.</p>
+
+<div class="container">
+    <div class="device">
+        <h2>hvac 1</h2>
+        <div class="device-control">
+            <button class="btn" onclick="toggleLight()">power</button>
+            <button class="btn" onclick="toggleLight()">mode</button>
+            <button class="btn" onclick="toggleLight()">temp</button>
+        </div>
+    </div>
+
+    <div class="device">
+        <h2>hvac 1</h2>
+        <div class="device-control">
+            <button class="btn" onclick="toggleLight()">power</button>
+            <button class="btn" onclick="toggleLight()">mode</button>
+            <button class="btn" onclick="toggleLight()">temp</button>
+        </div>
+    </div>
+
+    <div class="device">
+        <h2>hvac 1</h2>
+        <div class="device-control">
+            <button class="btn" onclick="toggleLight()">power</button>
+            <button class="btn" onclick="toggleLight()">mode</button>
+            <button class="btn" onclick="toggleLight()">temp</button>
+        </div>
+    </div>
+
+    <div class="device">
+        <h2>hvac 1</h2>
+        <div class="device-control">
+            <button class="btn" onclick="toggleLight()">power</button>
+            <button class="btn" onclick="toggleLight()">mode</button>
+            <button class="btn" onclick="toggleLight()">temp</button>
+        </div>
+    </div>
+
+    <!-- Add more devices here as needed -->
+
+</div>
+
+<script>
+    function toggleLight() {
+        var lightStatus = document.getElementById('lightStatus');
+        if (lightStatus.textContent === 'OFF') {
+            lightStatus.textContent = 'ON';
+            // Add logic here to control the light (e.g., send request to IoT device)
+        } else {
+            lightStatus.textContent = 'OFF';
+            // Add logic here to turn off the light
+        }
+    }
+
+    function toggleFan() {
+        var fanStatus = document.getElementById('fanStatus');
+        if (fanStatus.textContent === 'OFF') {
+            fanStatus.textContent = 'ON';
+            // Add logic here to control the fan (e.g., send request to IoT device)
+        } else {
+            fanStatus.textContent = 'OFF';
+            // Add logic here to turn off the fan
+        }
+    }
+</script>
+
 </body>
 </html>

@@ -4,6 +4,7 @@ nav {
 }
 
 nav .container {
+    width: 80%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -69,8 +70,8 @@ footer {
 
 .item {
     width: calc(33.3% - 20px); /* Two devices per row by default */
-
-
+    
+    height: 200px;
     margin-bottom: 20px;
     padding: 20px;
     /* background-color: #f9f9f9; */
@@ -78,29 +79,36 @@ footer {
     box-sizing: border-box;
     margin-right: 10px;
     margin-left: 10px;
+
+    position: relative;
+}
+
+.item .bottom {
+    position: absolute; /* Set position of the anchor */
+    bottom: 20px; /* Align to the bottom of the container */
 }
 
 @media screen and (min-width: 1141px) and (max-width: 1920px) {
     .item {
-        width: calc(25% - 20px); /* Three items per row */
+        width: calc(33.3% - 20px); /* Three items per row */
     }
-    .item:nth-child(4n) {
+    .item:nth-child(3n) {
         margin-right: 0;
     }
 }
 
 @media screen and (min-width: 651px) and (max-width: 1140px) {
     .item {
-        width: calc(33.33% - 20px); /* Two items per row */
+        width: calc(50% - 20px); /* Two items per row */
     }
-    .item:nth-child(3n) {
+    .item:nth-child(2n) {
       margin-right: 0;
     }
 }
 
 @media screen and (max-width: 650px) {
     .item {
-        width: calc(50% - 20px); /* One item per row on smaller screens */
+        width: calc(100% - 20px); /* One item per row on smaller screens */
     }
     .item:nth-child(2n) {
       margin-right: 0;
@@ -113,13 +121,11 @@ footer {
     background-position: center; /* Center the background image */
 }
 
-
 .HVAC {
     background-image: url("HVAC_background.webp");
     background-size: cover; /* Cover the entire container */
     background-position: center; /* Center the background image */
 }
-
 
 .FloorHeat {
     background-image: url("FloorHeat_background.jpg");
@@ -127,8 +133,20 @@ footer {
     background-position: center; /* Center the background image */
 }
 
+.Curtain {
+    background-image: url("Curtain_background.jpeg");
+    background-size: cover; /* Cover the entire container */
+    background-position: center; /* Center the background image */ 
+}
+
+.Fan {
+    background-image: url("Fan_background.webp");
+    background-size: cover; /* Cover the entire container */
+    background-position: center; /* Center the background image */ 
+}
+
 .control {
-    background-color: rgba(247, 247, 247, 0.6);
+    /* background-color: rgba(247, 247, 247, 0.6); */
     padding: 5px;
     border-radius: 16px;
     display: flex;
@@ -351,42 +369,42 @@ section {
     } */
     
 .footer{
-background:#000;
-padding:30px 0px;
-font-family: 'Play', sans-serif;
-text-align:center;
+    background: F7F7F7;
+    padding:30px 0px;
+    font-family: 'Play', sans-serif;
+    text-align:center;
 }
 
 .footer .row{
-width:100%;
-margin:1% 0%;
-padding:0.6% 0%;
-color:gray;
-font-size:0.8em;
+    width:100%;
+    margin:1% 0%;
+    padding:0.6% 0%;
+    color:gray;
+    font-size:0.8em;
 }
 
 .footer .row a{
-text-decoration:none;
-color:gray;
-transition:0.5s;
+    text-decoration:none;
+    color:gray;
+    transition:0.5s;
 }
 
 .footer .row a:hover{
-color:#fff;
+    color:#fff;
 }
 
 .footer .row ul{
-width:100%;
+    width:100%;
 }
 
 .footer .row ul li{
-display:inline-block;
-margin:0px 30px;
+    display:inline-block;
+    margin:0px 30px;
 }
 
 .footer .row a i{
-font-size:2em;
-margin:0% 1%;
+    font-size:2em;
+    margin:0% 1%;
 }
 
 @media (max-width:720px){
