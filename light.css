@@ -1,40 +1,79 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #111111; /* Darker background color */
-    color: #fff;
     margin: 0;
     padding: 0;
+    background-color: #f2f2f2;
 }
 .container {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-}
-header {
-    background-color: #333;
+    max-width: 90%;
+    margin: 20px auto;
     padding: 20px;
-    text-align: center;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
 }
-nav {
-    background-color: #222;
-    padding: 10px;
+.device {
+    width: calc(50% - 20px); /* Two devices per row by default */
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 18px;
+    box-sizing: border-box;
+    margin-right: 10px;
+    margin-left: 10px;
+
+    background-image: url("Light_background.jpg");
+    background-size: cover; /* Cover the entire container */
+    background-position: center; /* Center the background image */
 }
-nav ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
+.device h2 {
+    margin-top: 0;
 }
-nav ul li {
-    display: inline-block;
-    margin-right: 20px;
+.device-control {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.btn:hover {
+    background-color: #ddd;
+}
+.status {
     font-weight: bold;
 }
-footer {
-    background-color: #333;
-    padding: 10px;
-    text-align: center;
+
+@media screen and (min-width: 1141px) and (max-width: 1920px) {
+    .device {
+        width: calc(25% - 20px); /* Three devices per row */
+    }
+    .device:nth-child(4n) {
+        margin-right: 0;
+    }
+}
+
+@media screen and (min-width: 651px) and (max-width: 1140px) {
+    .device {
+        width: calc(33.33% - 20px); /* Two devices per row */
+    }
+    .device:nth-child(3n) {
+      margin-right: 0;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .device {
+        width: calc(50% - 20px); /* One device per row on smaller screens */
+    }
+    .device:nth-child(2n) {
+      margin-right: 0;
+    }
 }

@@ -22,7 +22,7 @@ function submitForm() {
     }
 
     var url = "/get?" +
-        "type=hvac" 
+        "type=hvac" +
         "&name=" + encodeURIComponent(name) +
         "&device_id=" + encodeURIComponent(deviceId) +
         "&subnet_id=" + encodeURIComponent(subnetId)
